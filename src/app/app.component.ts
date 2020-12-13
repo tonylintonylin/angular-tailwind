@@ -1,10 +1,39 @@
-import { Component } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import {
+  Component,
+  ElementRef,
+  Inject,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  title = 'angular-tailwind';
+export class AppComponent implements OnInit {
+  @ViewChild('textcontent', { static: true })
+  textcontent: ElementRef<HTMLDivElement>;
+
+  constructor(@Inject(DOCUMENT) private document: Document) {}
+
+  ngOnInit() {
+    this.initialAnimations();
+  }
+
+  initialAnimations(): void {
+    gsap.from(this.document.querySelector('#subhead'), {
+      scrollTrigger: {
+        trigger: this.document.querySelector('#subhead'),
+        toggleActions: 'restart pause resume reset',
+      } as gsap.plugins.ScrollTriggerInstanceVars,
+      duration: 1,
+      opacity: 0,
+    });
+  }
 }
