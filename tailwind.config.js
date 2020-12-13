@@ -20,15 +20,15 @@ module.exports = {
       white: colors.white,
 
       primary: {
-        100: "#a273ff",
-        200: "#935bff",
-        300: "#8344ff",
-        400: "#742cff",
-        500: "#6415FF",
-        600: "#5a13e6",
-        700: "#5011cc",
-        800: "#460fb3",
-        900: "#3c0d99",
+        100: "#DBEAFE",
+        200: "#BFDBFE",
+        300: "#93C5FD",
+        400: "#60A5FA",
+        500: "#0072ef",
+        600: "#005ABC",
+        700: "#1D4ED8",
+        800: "#1E40AF",
+        900: "#1E3A8A",
       },
 
       secondary: {
@@ -42,7 +42,7 @@ module.exports = {
         800: "#192b45",
         900: "#16253b",
       },
-      
+
       gray: colors.coolGray,
       red: colors.red,
       yellow: colors.amber,

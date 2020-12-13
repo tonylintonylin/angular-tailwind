@@ -30,10 +30,11 @@ export class AppComponent implements OnInit {
     gsap.from(this.document.querySelector('#subhead'), {
       scrollTrigger: {
         trigger: this.document.querySelector('#subhead'),
-        toggleActions: 'restart pause resume reset',
+        toggleActions: 'restart pause resume reset'
       } as gsap.plugins.ScrollTriggerInstanceVars,
-      duration: 1,
-      opacity: 0,
+      x: 200,
+      duration: 0.75,
+      opacity: 0.3,
     });
   }
 }
