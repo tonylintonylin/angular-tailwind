@@ -27,10 +27,19 @@ export class AppComponent implements OnInit {
   }
 
   initialAnimations(): void {
-    gsap.from(this.document.querySelector('#subhead'), {
+    gsap.from(this.document.querySelector('#subhead1'), {
       scrollTrigger: {
-        trigger: this.document.querySelector('#subhead'),
-        toggleActions: 'restart pause resume reset'
+        trigger: this.document.querySelector('#subhead1'),
+        toggleActions: 'restart pause resume reset',
+      } as gsap.plugins.ScrollTriggerInstanceVars,
+      x: 200,
+      duration: 0.75,
+      opacity: 0.3,
+    });
+    gsap.from(this.document.querySelector('#subhead2'), {
+      scrollTrigger: {
+        trigger: this.document.querySelector('#subhead2'),
+        toggleActions: 'restart pause resume reset',
       } as gsap.plugins.ScrollTriggerInstanceVars,
       x: 200,
       duration: 0.75,
